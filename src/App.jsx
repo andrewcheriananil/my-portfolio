@@ -1,42 +1,42 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import * as THREE from "three";
 import WAVES from "vanta/dist/vanta.waves.min";
-import "./App.css";
+import "./App.css"; // Ensure CSS is imported
 
 function App() {
+  const [vantaEffect, setVantaEffect] = useState(null);
   const vantaRef = useRef(null);
 
   useEffect(() => {
-    let effect;
-    if (!vantaRef.current.vantaEffect) {
-      effect = WAVES({
-        el: vantaRef.current,
-        THREE,
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: "100vh",
-        minWidth: "100vw",
-        scale: 1.0,
-        scaleMobile: 1.0,
-        color: 0x111111,
-        shininess: 20,
-        waveHeight: 25,
-        waveSpeed: 0.6,
-        zoom: 1.2,
-      });
-      vantaRef.current.vantaEffect = effect;
+    if (!vantaEffect) {
+      setVantaEffect(
+        WAVES({
+          el: vantaRef.current, // Attach to this div
+          THREE,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: window.innerHeight,
+          minWidth: window.innerWidth,
+          scale: 1.0,
+          scaleMobile: 1.0,
+          color: 0x111111, // Dark cyberpunk theme
+          shininess: 50,
+          waveHeight: 25,
+          waveSpeed: 0.7,
+        })
+      );
     }
 
     return () => {
-      if (effect) effect.destroy();
+      if (vantaEffect) vantaEffect.destroy();
     };
-  }, []);
+  }, [vantaEffect]);
 
   return (
     <div ref={vantaRef} className="app-container">
       <div className="content-wrapper">
-        <header className="header">
+        <header>
           <img
             src="https://i.imgur.com/VD3X8bu.jpeg"
             alt="Andrew C Anil"
@@ -44,33 +44,14 @@ function App() {
           />
           <h1>Andrew C Anil</h1>
           <p>Cybersecurity Student</p>
-          <div className="spacer"></div>
         </header>
-        <section className="social-links">
-          <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer" className="cyberpunk-link">
-            GitHub
-          </a>
-          <span className="link-spacing">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-          <a href="mailto:your.email@example.com" className="cyberpunk-link">
-            Email
-          </a>
-          <span className="link-spacing">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-          <a href="https://linkedin.com/in/yourlinkedin" target="_blank" rel="noopener noreferrer" className="cyberpunk-link">
-            LinkedIn
-          </a>
-        </section>
-        <main className="main-content">
-          <section>
-            <h2>About Me</h2>
-            <p>
-              I am a third-year cybersecurity student passionate about securing
-              digital landscapes and learning cutting-edge technologies. Let’s
-              connect!
-            </p>
-          </section>
-        </main>
+        <div className="social-links">
+          <a href="https://github.com/yourgithub" className="cyberpunk-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="mailto:your.email@example.com" className="cyberpunk-link">Email</a>
+          <a href="https://linkedin.com/in/yourlinkedin" className="cyberpunk-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+        <footer className="cyberpunk-footer">© 2025 Andrew C Anil. All rights reserved.</footer>
       </div>
-      <footer className="cyberpunk-footer">© 2025 Andrew C Anil. All rights reserved.</footer>
     </div>
   );
 }
