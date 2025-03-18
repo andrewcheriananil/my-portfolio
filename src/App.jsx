@@ -45,18 +45,18 @@ function App() {
         <h1>Andrew C Anil</h1>
         <p>Cybersecurity Student</p>
       </header>
-      <section className="social-links">
-        <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer">
-          GitHub
-        </a>
-        <a href="https://linkedin.com/in/yourlinkedin" target="_blank" rel="noopener noreferrer">
-          LinkedIn
-        </a>
-        <a href="mailto:your.email@example.com">
-          Email Me
-        </a>
-      </section>
       <main className="main-content">
+        <section className="social-links">
+          <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+          <a href="https://linkedin.com/in/yourlinkedin" target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
+          <a href="mailto:your.email@example.com">
+            Email Me
+          </a>
+        </section>
         <section>
           <h2>About Me</h2>
           <p>
@@ -72,3 +72,4 @@ function App() {
 }
 
 export default App;
+
