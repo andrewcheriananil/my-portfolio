@@ -4,35 +4,28 @@ import WAVES from "vanta/dist/vanta.waves.min";
 import "./App.css";
 
 function App() {
-  const [vantaEffect, setVantaEffect] = useState(null);
   const vantaRef = useRef(null);
 
   useEffect(() => {
-    if (!vantaEffect && vantaRef.current) {
-      setVantaEffect(
-        WAVES({
-          el: vantaRef.current,
-          THREE,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: "100vh",
-          minWidth: "100vw",
-          scale: 1.0,
-          scaleMobile: 1.0,
-          color: 0x111111, // Dark waves
-          shininess: 20,
-          waveHeight: 25,
-          waveSpeed: 0.6,
-          zoom: 1.2,
-        })
-      );
-    }
+    const effect = WAVES({
+      el: vantaRef.current,
+      THREE,
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: "100vh",
+      minWidth: "100vw",
+      scale: 1.0,
+      scaleMobile: 1.0,
+      color: 0x111111,
+      shininess: 20,
+      waveHeight: 25,
+      waveSpeed: 0.6,
+      zoom: 1.2,
+    });
 
-    return () => {
-      if (vantaEffect) vantaEffect.destroy();
-    };
-  }, [vantaEffect]);
+    return () => effect.destroy();
+  }, []);
 
   return (
     <div ref={vantaRef} className="app-container">
@@ -67,8 +60,8 @@ function App() {
             </p>
           </section>
         </main>
-        <footer className="cyberpunk-footer">© 2025 Andrew C Anil. All rights reserved.</footer>
       </div>
+      <footer className="cyberpunk-footer">© 2025 Andrew C Anil. All rights reserved.</footer>
     </div>
   );
 }
