@@ -47,9 +47,9 @@ function App() {
           <p className="description">Passionate about cybersecurity, ethical hacking, and protecting digital assets in an ever-evolving technological landscape.</p>
         </header>
         <div className="social-links">
-          <a href="https://github.com/yourgithub" className="cyberpunk-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="mailto:your.email@example.com" className="cyberpunk-link">Email</a>
-          <a href="https://linkedin.com/in/yourlinkedin" className="cyberpunk-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/hackdrew" className="cyberpunk-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="mailto:aca.andrewcanil@gmail.com" className="cyberpunk-link">Email</a>
+          <a href="https://linkedin.com/in/hackdrew" className="cyberpunk-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </div>
       <footer className="cyberpunk-footer">© 2025 Andrew C Anil. All rights reserved.</footer>
