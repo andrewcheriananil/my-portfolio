@@ -23,7 +23,7 @@ function App() {
             minWidth: 200.0,
             scale: 1.0,
             scaleMobile: 1.0,
-            color: 0xffffff,
+            color: 0x00ffff,
             backgroundColor: 0x000000,
           });
         }
@@ -43,12 +43,12 @@ function App() {
 
   return (
     <div id="vanta-background">
-      <header className="header">
-        <a href="#" target="_blank" rel="noopener noreferrer">
+      <div className="container">
+        <header className="header">
           <img src="https://i.imgur.com/VD3X8bu.jpeg" alt="Andrew C Anil" className="profile-pic" />
-        </a>
-        <h1 className="name">Andrew C Anil</h1>
-        <p className="title">Cybersecurity Student</p>
+          <h1 className="name">Andrew C Anil</h1>
+          <p className="title">Cybersecurity Student</p>
+        </header>
 
         <div className="social-links">
           <button onClick={() => window.open("https://github.com/hackdrew", "_blank")}>
@@ -61,17 +61,16 @@ function App() {
             <i className="bx bxl-linkedin"></i>
           </button>
         </div>
-      </header>
 
-      <section className="about">
-        <h2>About Me</h2>
-        <p>
-          I am a third-year cybersecurity student passionate about securing digital landscapes and learning
-          cutting-edge technologies. Let’s connect to collaborate on exciting projects!
-        </p>
-      </section>
+        <section className="about">
+          <h2>About Me</h2>
+          <p>
+            Passionate about cybersecurity, ethical hacking, and digital forensics. Let’s connect and collaborate!
+          </p>
+        </section>
 
-      <footer className="footer">© 2025 Andrew C Anil. All rights reserved.</footer>
+        <footer className="footer">© 2025 Andrew C Anil. All rights reserved.</footer>
+      </div>
 
       <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     </div>
