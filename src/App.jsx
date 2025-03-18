@@ -2,7 +2,6 @@ import { useEffect, useState, useRef } from "react";
 import * as THREE from "three";
 import WAVES from "vanta/dist/vanta.waves.min";
 import "./App.css";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 function App() {
   const [vantaEffect, setVantaEffect] = useState(null);
@@ -57,13 +56,13 @@ function App() {
         </section>
         <section className="social-links">
           <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer">
-            <FaGithub size={40} className="icon" />
+            GitHub
           </a>
           <a href="https://linkedin.com/in/yourlinkedin" target="_blank" rel="noopener noreferrer">
-            <FaLinkedin size={40} className="icon" />
+            LinkedIn
           </a>
           <a href="mailto:your.email@example.com">
-            <FaEnvelope size={40} className="icon" />
+            Email Me
           </a>
         </section>
       </main>
