@@ -9,8 +9,8 @@
 html, body {
   height: 100%;
   width: 100%;
-  background-color: black;
-  color: white;
+  background-color: #00111a; /* Darker cyan-blue background */
+  color: #00ffcc; /* Bright cyan for text */
   font-family: 'Arial', sans-serif;
   display: flex;
   justify-content: center;
@@ -49,18 +49,19 @@ html, body {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 3px solid cyan;
-  box-shadow: 0 0 15px cyan;
+  border: 3px solid #00ffcc;
+  box-shadow: 0 0 15px #00ffcc;
 }
 
 .name {
   font-size: 2.5rem;
   font-weight: bold;
+  color: #ffffff; /* White to stand out against the dark background */
 }
 
 .title {
   font-size: 1.2rem;
-  color: cyan;
+  color: #00ffcc;
 }
 
 /* Social Links */
@@ -73,7 +74,7 @@ html, body {
 
 .social-links button {
   background-color: transparent;
-  border: 2px solid cyan;
+  border: 2px solid #00ffcc;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
@@ -82,11 +83,11 @@ html, body {
 
 .social-links button i {
   font-size: 1.5rem;
-  color: cyan;
+  color: #00ffcc;
 }
 
 .social-links button:hover {
-  background-color: cyan;
+  background-color: #00ffcc;
   border-color: white;
 }
 
@@ -100,6 +101,7 @@ html, body {
   text-align: center;
   font-size: 1.2rem;
   line-height: 1.6;
+  color: white;
 }
 
 /* Footer */
@@ -111,5 +113,5 @@ html, body {
   position: fixed;
   bottom: 0;
   left: 0;
-  color: cyan;
+  color: #00ffcc;
 }
