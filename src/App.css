@@ -1,18 +1,40 @@
-/* Global Styles */
-html, body, #root {
-  height: 100%;
+/* Reset */
+* {
   margin: 0;
-  display: flex;
-  flex-direction: column;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#vanta-background {
-  flex: 1; /* Fills available space */
+/* Global Styles */
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  color: white;
+  font-family: 'Arial', sans-serif;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+/* Vanta Background Wrapper */
+#vanta-background {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main Container */
+.container {
   text-align: center;
+  width: 90%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 /* Header */
@@ -20,77 +42,74 @@ html, body, #root {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 10vh 0;
+  gap: 10px;
 }
 
 .profile-pic {
-  width: 25vw;
-  height: 25vw;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  border: 4px solid white;
-  box-shadow: 0 0 10px white;
-  margin-bottom: 2rem;
+  border: 3px solid cyan;
+  box-shadow: 0 0 15px cyan;
 }
 
 .name {
-  font-size: 6vw;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 
 .title {
-  font-size: 2.5vw;
-  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: cyan;
 }
 
 /* Social Links */
 .social-links {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  width: 100%;
-  margin-top: 1rem;
+  gap: 15px;
+  margin-top: 15px;
 }
 
 .social-links button {
-  background-color: white;
-  border: 1px solid black;
-  padding: 1rem;
-  border-radius: 0.25rem;
+  background-color: transparent;
+  border: 2px solid cyan;
+  padding: 10px;
+  border-radius: 5px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.social-links i {
-  font-size: 2rem;
+.social-links button i {
+  font-size: 1.5rem;
+  color: cyan;
+}
+
+.social-links button:hover {
+  background-color: cyan;
+  border-color: white;
+}
+
+.social-links button:hover i {
   color: black;
 }
 
 /* About Section */
 .about {
-  padding: 10vh 10vw;
-  max-width: 800px;
+  max-width: 600px;
   text-align: center;
-}
-
-.about h2 {
-  font-size: 4vw;
-  font-weight: 600;
-}
-
-.about p {
-  font-size: 2vw;
-  margin-top: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
 /* Footer */
 .footer {
   width: 100%;
   text-align: center;
-  padding: 1.5rem 0;
+  padding: 10px 0;
   background-color: rgba(255, 255, 255, 0.1);
-  color: white;
-  position: relative;
+  position: fixed;
   bottom: 0;
+  left: 0;
+  color: cyan;
 }
