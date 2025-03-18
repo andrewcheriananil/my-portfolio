@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import WAVES from "vanta/dist/vanta.waves.min";
 import "./App.css";
@@ -7,24 +7,30 @@ function App() {
   const vantaRef = useRef(null);
 
   useEffect(() => {
-    const effect = WAVES({
-      el: vantaRef.current,
-      THREE,
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: "100vh",
-      minWidth: "100vw",
-      scale: 1.0,
-      scaleMobile: 1.0,
-      color: 0x111111,
-      shininess: 20,
-      waveHeight: 25,
-      waveSpeed: 0.6,
-      zoom: 1.2,
-    });
+    let effect;
+    if (!vantaRef.current.vantaEffect) {
+      effect = WAVES({
+        el: vantaRef.current,
+        THREE,
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: "100vh",
+        minWidth: "100vw",
+        scale: 1.0,
+        scaleMobile: 1.0,
+        color: 0x111111,
+        shininess: 20,
+        waveHeight: 25,
+        waveSpeed: 0.6,
+        zoom: 1.2,
+      });
+      vantaRef.current.vantaEffect = effect;
+    }
 
-    return () => effect.destroy();
+    return () => {
+      if (effect) effect.destroy();
+    };
   }, []);
 
   return (
