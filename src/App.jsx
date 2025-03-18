@@ -8,7 +8,7 @@ function App() {
   const vantaRef = useRef(null);
 
   useEffect(() => {
-    if (!vantaEffect) {
+    if (!vantaEffect && vantaRef.current) {
       setVantaEffect(
         WAVES({
           el: vantaRef.current,
@@ -36,37 +36,39 @@ function App() {
 
   return (
     <div ref={vantaRef} className="app-container">
-      <header className="header">
-        <img
-          src="https://i.imgur.com/VD3X8bu.jpeg"
-          alt="Andrew C Anil"
-          className="profile-pic"
-        />
-        <h1>Andrew C Anil</h1>
-        <p>Cybersecurity Student</p>
-      </header>
-      <main className="main-content">
-        <section>
-          <h2>About Me</h2>
-          <p>
-            I am a third-year cybersecurity student passionate about securing
-            digital landscapes and learning cutting-edge technologies. Let’s
-            connect!
-          </p>
-        </section>
+      <div className="content-wrapper">
+        <header className="header">
+          <img
+            src="https://i.imgur.com/VD3X8bu.jpeg"
+            alt="Andrew C Anil"
+            className="profile-pic"
+          />
+          <h1>Andrew C Anil</h1>
+          <p>Cybersecurity Student</p>
+        </header>
         <section className="social-links">
-          <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer" className="cyberpunk-link">
             GitHub
           </a>
-          <a href="https://linkedin.com/in/yourlinkedin" target="_blank" rel="noopener noreferrer">
+          <a href="https://linkedin.com/in/yourlinkedin" target="_blank" rel="noopener noreferrer" className="cyberpunk-link">
             LinkedIn
           </a>
-          <a href="mailto:your.email@example.com">
+          <a href="mailto:your.email@example.com" className="cyberpunk-link">
             Email Me
           </a>
         </section>
-      </main>
-      <footer className="cyberpunk-footer">© 2025 Andrew C Anil. All rights reserved.</footer>
+        <main className="main-content">
+          <section>
+            <h2>About Me</h2>
+            <p>
+              I am a third-year cybersecurity student passionate about securing
+              digital landscapes and learning cutting-edge technologies. Let’s
+              connect!
+            </p>
+          </section>
+        </main>
+        <footer className="cyberpunk-footer">© 2025 Andrew C Anil. All rights reserved.</footer>
+      </div>
     </div>
   );
 }
