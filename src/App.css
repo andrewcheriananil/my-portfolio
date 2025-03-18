@@ -9,8 +9,8 @@
 html, body {
   height: 100%;
   width: 100%;
-  background-color: #00111a; /* Darker cyan-blue background */
-  color: #00ffcc; /* Bright cyan for text */
+  background-color: #00111a; /* Dark blue background */
+  color: #00ffcc; /* Neon cyan text */
   font-family: 'Arial', sans-serif;
   display: flex;
   justify-content: center;
@@ -18,9 +18,9 @@ html, body {
 }
 
 /* Vanta Background Wrapper */
-#vanta-background {
+.vanta-background {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,7 +56,7 @@ html, body {
 .name {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #ffffff; /* White to stand out against the dark background */
+  color: #ffffff;
 }
 
 .title {
