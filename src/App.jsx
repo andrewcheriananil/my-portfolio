@@ -38,6 +38,7 @@ function App() {
           />
           <h1>Andrew C Anil</h1>
           <p>Cybersecurity Student</p>
+          <div className="spacer"></div>
         </header>
         <section className="social-links">
           <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer" className="cyberpunk-link">
