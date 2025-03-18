@@ -1,33 +1,32 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import * as THREE from "three";
+import WAVES from "vanta/dist/vanta.waves.min";
+import "./App.css"; // Ensure CSS is imported
 
 function App() {
-  const vantaRef = useRef(null);
   const [vantaEffect, setVantaEffect] = useState(null);
+  const vantaRef = useRef(null);
 
   useEffect(() => {
-    import("vanta/dist/vanta.waves.min").then((VANTA) => {
-      if (!vantaEffect) {
-        setVantaEffect(
-          VANTA.default({
-            el: vantaRef.current,
-            THREE,
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.0,
-            minWidth: 200.0,
-            scale: 1.0,
-            scaleMobile: 1.0,
-            color: 0x00ffcc, // Cyan effect
-            shininess: 50,
-            waveHeight: 20,
-            waveSpeed: 1.2,
-            zoom: 1,
-          })
-        );
-      }
-    });
+    if (!vantaEffect) {
+      setVantaEffect(
+        WAVES({
+          el: vantaRef.current, // Attach to this div
+          THREE,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: window.innerHeight,
+          minWidth: window.innerWidth,
+          scale: 1.0,
+          scaleMobile: 1.0,
+          color: 0x222222, // Adjust color for better visibility
+          shininess: 30,
+          waveHeight: 20,
+          waveSpeed: 0.5,
+        })
+      );
+    }
 
     return () => {
       if (vantaEffect) vantaEffect.destroy();
@@ -35,35 +34,27 @@ function App() {
   }, [vantaEffect]);
 
   return (
-    <div ref={vantaRef} className="vanta-background">
-      <div className="container">
-        <header className="header">
-          <img src="https://i.imgur.com/VD3X8bu.jpeg" alt="Andrew C Anil" className="profile-pic" />
-          <h1 className="name">Andrew C Anil</h1>
-          <p className="title">Cybersecurity Student</p>
+    <div ref={vantaRef} className="app-container">
+      <div className="content">
+        <header>
+          <img
+            src="https://i.imgur.com/VD3X8bu.jpeg"
+            alt="Andrew C Anil"
+            className="profile-pic"
+          />
+          <h1>Andrew C Anil</h1>
+          <p>Cybersecurity Student</p>
         </header>
-
-        <div className="social-links">
-          <button onClick={() => window.open("https://github.com/hackdrew", "_blank")}>
-            <i className="bx bxl-github"></i>
-          </button>
-          <button onClick={() => (window.location.href = "mailto:aca.andrewcanil@gmail.com")}>
-            <i className="bx bxs-envelope"></i>
-          </button>
-          <button onClick={() => window.open("https://linkedin.com/in/hackdrew", "_blank")}>
-            <i className="bx bxl-linkedin"></i>
-          </button>
-        </div>
-
-        <section className="about">
+        <section>
           <h2>About Me</h2>
-          <p>Passionate about cybersecurity, ethical hacking, and digital forensics. Let’s connect and collaborate!</p>
+          <p>
+            I am a third-year cybersecurity student passionate about securing
+            digital landscapes and learning cutting-edge technologies. Let’s
+            connect!
+          </p>
         </section>
-
-        <footer className="footer">© 2025 Andrew C Anil. All rights reserved.</footer>
+        <footer>© 2025 Andrew C Anil. All rights reserved.</footer>
       </div>
-
-      <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     </div>
   );
 }
