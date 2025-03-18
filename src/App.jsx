@@ -20,11 +20,11 @@ function App() {
           minWidth: window.innerWidth,
           scale: 1.0,
           scaleMobile: 1.0,
-          color: 0x0000009, // Neon pink accents
+          color: 0x00ffff, // Neon blue accents
           shininess: 200,
           waveHeight: 40,
           waveSpeed: 2.0,
-          backgroundColor: 0xff0099, // Black background
+          backgroundColor: 0x000000, // Black background
           zoom: 1.2,
           color2: 0x00ffff, // Neon blue accents
           glare: true,
