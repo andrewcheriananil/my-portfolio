@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import * as THREE from "three";
 import WAVES from "vanta/dist/vanta.waves.min";
 import "./App.css";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 function App() {
   const [vantaEffect, setVantaEffect] = useState(null);
@@ -36,24 +37,37 @@ function App() {
 
   return (
     <div ref={vantaRef} className="app-container">
-      <header>
-        <img
-          src="https://i.imgur.com/VD3X8bu.jpeg"
-          alt="Andrew C Anil"
-          className="profile-pic"
-        />
-        <h1>Andrew C Anil</h1>
-        <p>Cybersecurity Student</p>
-      </header>
-      <section>
-        <h2>About Me</h2>
-        <p>
-          I am a third-year cybersecurity student passionate about securing
-          digital landscapes and learning cutting-edge technologies. Let’s
-          connect!
-        </p>
-      </section>
-      <footer className="cyberpunk-footer">© 2025 Andrew C Anil. All rights reserved.</footer>
+      <div className="content">
+        <header>
+          <img
+            src="https://i.imgur.com/VD3X8bu.jpeg"
+            alt="Andrew C Anil"
+            className="profile-pic"
+          />
+          <h1>Andrew C Anil</h1>
+          <p>Cybersecurity Student</p>
+        </header>
+        <section>
+          <h2>About Me</h2>
+          <p>
+            I am a third-year cybersecurity student passionate about securing
+            digital landscapes and learning cutting-edge technologies. Let’s
+            connect!
+          </p>
+        </section>
+        <section className="social-links">
+          <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer">
+            <FaGithub size={40} className="icon" />
+          </a>
+          <a href="https://linkedin.com/in/yourlinkedin" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin size={40} className="icon" />
+          </a>
+          <a href="mailto:your.email@example.com">
+            <FaEnvelope size={40} className="icon" />
+          </a>
+        </section>
+        <footer className="cyberpunk-footer">© 2025 Andrew C Anil. All rights reserved.</footer>
+      </div>
     </div>
   );
 }
