@@ -43,11 +43,11 @@ function App() {
           <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer" className="cyberpunk-link">
             GitHub
           </a>
-          <span className="link-spacing"></span>
+          <span className="link-spacing">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
           <a href="mailto:your.email@example.com" className="cyberpunk-link">
             Email
           </a>
-          <span className="link-spacing"></span>
+          <span className="link-spacing">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
           <a href="https://linkedin.com/in/yourlinkedin" target="_blank" rel="noopener noreferrer" className="cyberpunk-link">
             LinkedIn
           </a>
