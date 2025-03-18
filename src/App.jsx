@@ -17,8 +17,8 @@ function App() {
           mouseControls: true,
           touchControls: true,
           gyroControls: false,
-          minHeight: window.innerHeight,
-          minWidth: window.innerWidth,
+          minHeight: "100vh",
+          minWidth: "100vw",
           scale: 1.0,
           scaleMobile: 1.0,
           color: 0x111111, // Dark waves
@@ -37,16 +37,16 @@ function App() {
 
   return (
     <div ref={vantaRef} className="app-container">
-      <div className="content">
-        <header>
-          <img
-            src="https://i.imgur.com/VD3X8bu.jpeg"
-            alt="Andrew C Anil"
-            className="profile-pic"
-          />
-          <h1>Andrew C Anil</h1>
-          <p>Cybersecurity Student</p>
-        </header>
+      <header className="header">
+        <img
+          src="https://i.imgur.com/VD3X8bu.jpeg"
+          alt="Andrew C Anil"
+          className="profile-pic"
+        />
+        <h1>Andrew C Anil</h1>
+        <p>Cybersecurity Student</p>
+      </header>
+      <main className="main-content">
         <section>
           <h2>About Me</h2>
           <p>
@@ -66,8 +66,8 @@ function App() {
             <FaEnvelope size={40} className="icon" />
           </a>
         </section>
-        <footer className="cyberpunk-footer">© 2025 Andrew C Anil. All rights reserved.</footer>
-      </div>
+      </main>
+      <footer className="cyberpunk-footer">© 2025 Andrew C Anil. All rights reserved.</footer>
     </div>
   );
 }
