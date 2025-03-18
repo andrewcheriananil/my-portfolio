@@ -1,205 +1,93 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function Portfolio() {
+  const [vantaEffect, setVantaEffect] = useState(null);
+
   useEffect(() => {
-    // Load Three.js and Vanta.js for the background effect
     if (typeof window !== "undefined") {
-      const script1 = document.createElement("script");
-      script1.src = "https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js";
-      script1.async = true;
-      document.body.appendChild(script1);
+      const loadScripts = async () => {
+        if (!window.THREE) {
+          const script1 = document.createElement("script");
+          script1.src =
+            "https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js";
+          script1.async = true;
+          document.body.appendChild(script1);
+          await new Promise((resolve) => (script1.onload = resolve));
+        }
 
-      const script2 = document.createElement("script");
-      script2.src = "https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.net.min.js";
-      script2.async = true;
+        if (!window.VANTA) {
+          const script2 = document.createElement("script");
+          script2.src =
+            "https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.net.min.js";
+          script2.async = true;
+          document.body.appendChild(script2);
+          await new Promise((resolve) => (script2.onload = resolve));
+        }
 
-      script2.onload = () => {
-        // Initialize Vanta.NET once the script is loaded
-        if (typeof window.VANTA !== "undefined") {
+        // Initialize Vanta.NET effect
+        setVantaEffect(
           window.VANTA.NET({
-            el: "#vanta-background", // Ensure this matches the id of the background div
+            el: "#vanta-background",
             mouseControls: true,
             touchControls: true,
             gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            color: 0xffffff, // White color for the net effect
-            backgroundColor: 0x000000 // Black background color for contrast
-          });
-        }
+            minHeight: 200.0,
+            minWidth: 200.0,
+            scale: 1.0,
+            scaleMobile: 1.0,
+            color: 0xffffff,
+            backgroundColor: 0x000000,
+          })
+        );
       };
 
-      document.body.appendChild(script2);
-
-      // Cleanup scripts and Vanta effect when component unmounts
-      return () => {
-        document.body.removeChild(script1);
-        document.body.removeChild(script2);
-        if (typeof window.VANTA !== "undefined") {
-          window.VANTA.NET({ el: "#vanta-background" }).destroy();
-        }
-      };
+      loadScripts();
     }
+
+    return () => {
+      if (vantaEffect) vantaEffect.destroy();
+    };
   }, []);
 
   return (
-    <div
-      id="vanta-background"
-      style={{
-        minHeight: "100vh",
-        width: "100vw",
-        backgroundColor: "black", // Fallback color
-        color: "white",
-        fontFamily: "sans-serif",
-        margin: "0",
-        padding: "0",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        position: "relative",
-      }}
-    >
+    <div id="vanta-background" className="container">
       {/* Header Section */}
-      <header
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "10vh 0",
-          textAlign: "center",
-          width: "100%",
-        }}
-      >
-        <a
-          href=""
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ textDecoration: "none" }}
-        >
+      <header className="header">
+        <a href="" target="_blank" rel="noopener noreferrer">
           <img
             src="https://i.imgur.com/VD3X8bu.jpeg"
             alt="Andrew C Anil"
-            style={{
-              width: "25vw",
-              height: "25vw",
-              borderRadius: "50%",
-              border: "4px solid white",
-              boxShadow: "0 0 10px white",
-              marginBottom: "2rem",
-            }}
+            className="profile-pic"
           />
         </a>
-        <h1
-          style={{
-            fontSize: "6vw",
-            fontWeight: "bold",
-            marginTop: "1rem",
-          }}
-        >
-          Andrew C Anil
-        </h1>
-        <p
-          style={{
-            fontSize: "2.5vw",
-            marginTop: "0.5rem",
-          }}
-        >
-          Cybersecurity Student
-        </p>
+        <h1 className="name">Andrew C Anil</h1>
+        <p className="subtitle">Cybersecurity Student</p>
 
         {/* Social Links */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "2rem",
-            marginTop: "1rem",
-          }}
-        >
-          <button
-            style={{
-              backgroundColor: "white",
-              border: "1px solid black",
-              padding: "1rem",
-              borderRadius: "0.25rem",
-            }}
-            onClick={() => window.open("https://github.com/hackdrew", "_blank")}
-          >
-            <i className="bx bxl-github" style={{ fontSize: "2rem", color: "black" }}></i>
+        <div className="social-links">
+          <button onClick={() => window.open("https://github.com/hackdrew", "_blank")}>
+            <i className="bx bxl-github"></i>
           </button>
-          <button
-            style={{
-              backgroundColor: "white",
-              border: "1px solid black",
-              padding: "1rem",
-              borderRadius: "0.25rem",
-            }}
-            onClick={() => (window.location.href = "mailto:aca.andrewcanil@gmail.com")}
-          >
-            <i className="bx bxs-envelope" style={{ fontSize: "2rem", color: "black" }}></i>
+          <button onClick={() => (window.location.href = "mailto:aca.andrewcanil@gmail.com")}>
+            <i className="bx bxs-envelope"></i>
           </button>
-          <button
-            style={{
-              backgroundColor: "white",
-              border: "1px solid black",
-              padding: "1rem",
-              borderRadius: "0.25rem",
-            }}
-            onClick={() => window.open("https://linkedin.com/in/hackdrew", "_blank")}
-          >
-            <i className="bx bxl-linkedin" style={{ fontSize: "2rem", color: "black" }}></i>
+          <button onClick={() => window.open("https://linkedin.com/in/hackdrew", "_blank")}>
+            <i className="bx bxl-linkedin"></i>
           </button>
         </div>
       </header>
 
       {/* About Section */}
-      <section
-        style={{
-          padding: "10vh 10vw",
-          textAlign: "center",
-          width: "100%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          maxWidth: "100%",
-        }}
-      >
-        <h2
-          style={{
-            fontSize: "4vw",
-            fontWeight: "600",
-          }}
-        >
-          About Me
-        </h2>
-        <p
-          style={{
-            fontSize: "2vw",
-            marginTop: "1rem",
-            maxWidth: "40rem",
-            marginInline: "auto",
-          }}
-        >
-          I am a third-year cybersecurity student passionate about securing digital landscapes and learning cutting-edge technologies. Let’s connect to collaborate on exciting projects!
+      <section className="about">
+        <h2>About Me</h2>
+        <p>
+          I am a third-year cybersecurity student passionate about securing digital landscapes
+          and learning cutting-edge technologies. Let’s connect to collaborate on exciting projects!
         </p>
       </section>
 
       {/* Footer */}
-      <footer
-        style={{
-          padding: "5vh 0",
-          textAlign: "center",
-          fontSize: "1vw",
-          borderTop: "1px solid white",
-          backgroundColor: "rgba(255, 255, 255, 0.3)", // Translucent white background
-          width: "100%",
-        }}
-      >
+      <footer className="footer">
         © 2025 Andrew C Anil. All rights reserved.
       </footer>
 
