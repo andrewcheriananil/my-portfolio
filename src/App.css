@@ -1,117 +1,81 @@
-/* Reset */
-* {
+/* Ensure body takes full height */
+html,
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-/* Global Styles */
-html, body {
+  width: 100%;
   height: 100%;
-  width: 100%;
-  background-color: #00111a; /* Dark blue background */
-  color: #00ffcc; /* Neon cyan text */
-  font-family: 'Arial', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+  color: white;
+  background: black; /* Fallback in case Vanta fails */
 }
 
-/* Vanta Background Wrapper */
-.vanta-background {
-  width: 100%;
+/* Make Vanta background fill entire screen */
+.app-container {
+  width: 100vw;
   height: 100vh;
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-}
-
-/* Main Container */
-.container {
   text-align: center;
-  width: 90%;
+  position: relative;
+}
+
+/* Content box */
+.content {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   max-width: 800px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  padding: 2rem;
 }
 
-/* Header */
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
+/* Profile Picture */
 .profile-pic {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 3px solid #00ffcc;
-  box-shadow: 0 0 15px #00ffcc;
+  border: 3px solid white;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  margin-bottom: 1rem;
 }
 
-.name {
+/* Headings */
+h1 {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #ffffff;
 }
 
-.title {
-  font-size: 1.2rem;
-  color: #00ffcc;
+h2 {
+  font-size: 2rem;
+  margin-top: 1.5rem;
 }
 
-/* Social Links */
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 15px;
-}
-
-.social-links button {
-  background-color: transparent;
-  border: 2px solid #00ffcc;
-  padding: 10px;
+/* Social buttons */
+button {
+  background-color: white;
+  border: none;
+  padding: 10px 20px;
   border-radius: 5px;
+  margin: 10px;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-.social-links button i {
-  font-size: 1.5rem;
-  color: #00ffcc;
+button:hover {
+  background-color: gray;
 }
 
-.social-links button:hover {
-  background-color: #00ffcc;
-  border-color: white;
-}
-
-.social-links button:hover i {
-  color: black;
-}
-
-/* About Section */
-.about {
-  max-width: 600px;
-  text-align: center;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: white;
-}
-
-/* Footer */
-.footer {
+/* Footer fixed at bottom */
+footer {
   width: 100%;
-  text-align: center;
-  padding: 10px 0;
-  background-color: rgba(255, 255, 255, 0.1);
-  position: fixed;
+  position: absolute;
   bottom: 0;
-  left: 0;
-  color: #00ffcc;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  color: white;
+  font-size: 0.9rem;
 }
