@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import "./styles.css";
+import "./App.css";
 
-function Portfolio() {
+function App() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const script1 = document.createElement("script");
@@ -83,4 +83,4 @@ function Portfolio() {
   );
 }
 
-export default Portfolio;
+export default App;
