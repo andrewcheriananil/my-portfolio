@@ -20,11 +20,11 @@ function App() {
           minWidth: window.innerWidth,
           scale: 1.0,
           scaleMobile: 1.0,
-          color: 0x00ffcc, // Neon cyan
-          shininess: 80,
-          waveHeight: 35,
-          waveSpeed: 1.0,
-          zoom: 1.3,
+          color: 0x111111, // Dark waves
+          shininess: 20,
+          waveHeight: 25,
+          waveSpeed: 0.6,
+          zoom: 1.2,
         })
       );
     }
