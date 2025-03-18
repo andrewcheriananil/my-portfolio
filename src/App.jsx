@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import * as THREE from "three";
 import WAVES from "vanta/dist/vanta.waves.min";
-import "./App.css"; // Ensure CSS is imported
+import "./App.css";
 
 function App() {
   const [vantaEffect, setVantaEffect] = useState(null);
@@ -11,7 +11,7 @@ function App() {
     if (!vantaEffect) {
       setVantaEffect(
         WAVES({
-          el: vantaRef.current, // Attach to this div
+          el: vantaRef.current,
           THREE,
           mouseControls: true,
           touchControls: true,
@@ -20,10 +20,11 @@ function App() {
           minWidth: window.innerWidth,
           scale: 1.0,
           scaleMobile: 1.0,
-          color: 0x222222, // Adjust color for better visibility
-          shininess: 30,
-          waveHeight: 20,
-          waveSpeed: 0.5,
+          color: 0x00ffcc, // Neon cyan
+          shininess: 80,
+          waveHeight: 35,
+          waveSpeed: 1.0,
+          zoom: 1.3,
         })
       );
     }
@@ -53,7 +54,7 @@ function App() {
             connect!
           </p>
         </section>
-        <footer>© 2025 Andrew C Anil. All rights reserved.</footer>
+        <footer className="cyberpunk-footer">© 2025 Andrew C Anil. All rights reserved.</footer>
       </div>
     </div>
   );
