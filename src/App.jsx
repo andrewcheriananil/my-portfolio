@@ -21,7 +21,7 @@ function App() {
           scale: 1.0,
           scaleMobile: 1.0,
           color: 0x000000,
-          shininess: 200,
+          shininess: 20,
           waveHeight: 40,
           waveSpeed: 1.0,
         })
