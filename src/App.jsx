@@ -47,13 +47,13 @@ function App() {
       </header>
       <main className="main-content">
         <section className="social-links">
-          <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer" className="cyberpunk-link">
             GitHub
           </a>
-          <a href="https://linkedin.com/in/yourlinkedin" target="_blank" rel="noopener noreferrer">
+          <a href="https://linkedin.com/in/yourlinkedin" target="_blank" rel="noopener noreferrer" className="cyberpunk-link">
             LinkedIn
           </a>
-          <a href="mailto:your.email@example.com">
+          <a href="mailto:your.email@example.com" className="cyberpunk-link">
             Email Me
           </a>
         </section>
@@ -72,4 +72,3 @@ function App() {
 }
 
 export default App;
-
