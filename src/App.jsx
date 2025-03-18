@@ -45,6 +45,17 @@ function App() {
         <h1>Andrew C Anil</h1>
         <p>Cybersecurity Student</p>
       </header>
+      <section className="social-links">
+        <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer">
+          GitHub
+        </a>
+        <a href="https://linkedin.com/in/yourlinkedin" target="_blank" rel="noopener noreferrer">
+          LinkedIn
+        </a>
+        <a href="mailto:your.email@example.com">
+          Email Me
+        </a>
+      </section>
       <main className="main-content">
         <section>
           <h2>About Me</h2>
@@ -53,17 +64,6 @@ function App() {
             digital landscapes and learning cutting-edge technologies. Let’s
             connect!
           </p>
-        </section>
-        <section className="social-links">
-          <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-          <a href="https://linkedin.com/in/yourlinkedin" target="_blank" rel="noopener noreferrer">
-            LinkedIn
-          </a>
-          <a href="mailto:your.email@example.com">
-            Email Me
-          </a>
         </section>
       </main>
       <footer className="cyberpunk-footer">© 2025 Andrew C Anil. All rights reserved.</footer>
