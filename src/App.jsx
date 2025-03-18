@@ -4,17 +4,17 @@ function App() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const script1 = document.createElement("script");
-      script1.src = "https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js";
+      script1.src = "/three.r134.min.js";
       script1.async = true;
       document.body.appendChild(script1);
 
       const script2 = document.createElement("script");
-      script2.src = "https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.net.min.js";
+      script2.src = "/vanta.waves.min.js";
       script2.async = true;
 
       script2.onload = () => {
         if (typeof window.VANTA !== "undefined") {
-          window.VANTA.NET({
+          window.VANTA.WAVES({
             el: "#vanta-background",
             mouseControls: true,
             touchControls: true,
@@ -23,8 +23,11 @@ function App() {
             minWidth: 200.0,
             scale: 1.0,
             scaleMobile: 1.0,
-            color: 0x00ffff,
-            backgroundColor: 0x000000,
+            color: 0x00ffcc,  // Adjusted to a cool cyan-teal wave effect
+            shininess: 50,
+            waveHeight: 20,
+            waveSpeed: 1.2,
+            zoom: 1,
           });
         }
       };
@@ -35,7 +38,7 @@ function App() {
         document.body.removeChild(script1);
         document.body.removeChild(script2);
         if (typeof window.VANTA !== "undefined") {
-          window.VANTA.NET({ el: "#vanta-background" }).destroy();
+          window.VANTA.WAVES({ el: "#vanta-background" }).destroy();
         }
       };
     }
