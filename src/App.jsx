@@ -36,26 +36,24 @@ function App() {
 
   return (
     <div ref={vantaRef} className="app-container">
-      <div className="content">
-        <header>
-          <img
-            src="https://i.imgur.com/VD3X8bu.jpeg"
-            alt="Andrew C Anil"
-            className="profile-pic"
-          />
-          <h1>Andrew C Anil</h1>
-          <p>Cybersecurity Student</p>
-        </header>
-        <section>
-          <h2>About Me</h2>
-          <p>
-            I am a third-year cybersecurity student passionate about securing
-            digital landscapes and learning cutting-edge technologies. Let’s
-            connect!
-          </p>
-        </section>
-        <footer className="cyberpunk-footer">© 2025 Andrew C Anil. All rights reserved.</footer>
-      </div>
+      <header>
+        <img
+          src="https://i.imgur.com/VD3X8bu.jpeg"
+          alt="Andrew C Anil"
+          className="profile-pic"
+        />
+        <h1>Andrew C Anil</h1>
+        <p>Cybersecurity Student</p>
+      </header>
+      <section>
+        <h2>About Me</h2>
+        <p>
+          I am a third-year cybersecurity student passionate about securing
+          digital landscapes and learning cutting-edge technologies. Let’s
+          connect!
+        </p>
+      </section>
+      <footer className="cyberpunk-footer">© 2025 Andrew C Anil. All rights reserved.</footer>
     </div>
   );
 }
