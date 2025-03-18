@@ -26,6 +26,9 @@ function App() {
           waveSpeed: 2.0,
           backgroundColor: 0x000000, // Black background
           zoom: 1.2,
+          color2: 0x00ffff, // Neon blue accents
+          glare: true,
+          highlightColor: 0x00ffff, // Additional blue highlight
         })
       );
     }
