@@ -20,10 +20,11 @@ function App() {
           minWidth: window.innerWidth,
           scale: 1.0,
           scaleMobile: 1.0,
-          color: 0x111111, // Dark cyberpunk theme
-          shininess: 50,
-          waveHeight: 25,
-          waveSpeed: 0.7,
+          color: 0x000000, // Primarily black
+          shininess: 150,
+          waveHeight: 35,
+          waveSpeed: 1.5,
+          backgroundColor: 0x000000, // Black background
         })
       );
     }
@@ -58,4 +59,3 @@ function App() {
 }
 
 export default App;
-
