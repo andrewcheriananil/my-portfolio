@@ -44,8 +44,8 @@ body {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 3px solid #ff0099;
-  box-shadow: 0 0 20px rgba(255, 0, 153, 0.7);
+  border: 3px solid #00ffff;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
   margin-bottom: 1rem;
 }
 
@@ -53,7 +53,7 @@ body {
 h1 {
   font-size: 2.5rem;
   font-weight: bold;
-  text-shadow: 0 0 10px #ff0099, 0 0 20px #ff0099;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
 }
 
 h2 {
@@ -80,7 +80,7 @@ p {
 
 .cyberpunk-link {
   font-size: 1.2rem;
-  color: #ff0099;
+  color: #00ffff;
   text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
